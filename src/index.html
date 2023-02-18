@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ActuatorArray</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div id="panel">
+        <h1>16阵列控制面板</h1>
+        <div id="array">
+            <div>
+                <input type="button" name="ac1" id="ac1" class="submit" value="Ac 1" onclick="mousedown('ac1')"/>
+                <input type="button" name="ac2" id="ac2" class="submit" value="Ac 2" onclick="mousedown('ac2')"/>
+                <input type="button" name="ac3" id="ac3" class="submit" value="Ac 3" onclick="mousedown('ac3')"/>
+                <input type="button" name="ac4" id="ac4" class="submit" value="Ac 4" onclick="mousedown('ac4')"/>
+            </div>
+            <div>
+                <input type="button" name="ac5" id="ac5" class="submit" value="Ac 5" onclick="mousedown('ac5')"/>
+                <input type="button" name="ac6" id="ac6" class="submit" value="Ac 6" onclick="mousedown('ac6')"/>
+                <input type="button" name="ac7" id="ac7" class="submit" value="Ac 7" onclick="mousedown('ac7')"/>
+                <input type="button" name="ac8" id="ac8" class="submit" value="Ac 8" onclick="mousedown('ac8')"/>
+            </div>
+            <div>
+                <input type="button" name="ac8" id="ac9" class="submit" value="Ac 9" onclick="mousedown('ac9')"/>
+                <input type="button" name="ac9" id="ac10" class="submit" value="Ac 10" onclick="mousedown('ac10')"/>
+                <input type="button" name="ac10" id="ac11" class="submit" value="Ac 11" onclick="mousedown('ac11')"/>
+                <input type="button" name="ac12" id="ac12" class="submit" value="Ac 12" onclick="mousedown('ac12')"/>
+            </div>
+            <div>
+                <input type="button" name="ac13" id="ac13" class="submit" value="Ac 13" onclick="mousedown('ac13')"/>
+                <input type="button" name="ac14" id="ac14" class="submit" value="Ac 14" onclick="mousedown('ac14')"/>
+                <input type="button" name="ac15" id="ac15" class="submit" value="Ac 15" onclick="mousedown('ac15')"/>
+                <input type="button" name="ac16" id="ac16" class="submit" value="Ac 16" onclick="mousedown('ac16')"/>
+            </div>
+        </div>
+        
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        function mousedown(id){
+            var btn = document.getElementById(id);
+            if (btn.className === "submit") {
+                btn.className = "submit_down";
+                socket.emit('senddata', "U"+id.toString().slice(2)+"\n");
+            } else {
+                btn.className = "submit";
+                socket.emit('senddata', "D"+id.toString().slice(2)+"\n");
+            }
+        }
+        
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

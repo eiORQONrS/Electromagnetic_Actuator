@@ -1,0 +1,54 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#panel {
+    margin: 2% 5%;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+}
+
+#array {
+    border: 5px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.submit {
+    background-color: #a8a8a8;
+    border: 5px solid #3b3b3b85;
+    color: white;
+    margin: 2px 0px;
+    text-align: center;
+    display: inline-block;
+    
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.submit_down {
+    background-color: #303030;
+    border: 5px solid #3b3b3b85;
+    color: white;
+    margin: 2px 0px;
+    text-align: center;
+    display: inline-block;
+    
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.submit:hover {
+    background-color: #c4c4c4; /* Green */
+}
